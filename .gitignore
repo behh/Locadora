@@ -1,0 +1,7 @@
+*.log 
+*.exe
+/.vscode
+*.crt
+*.key
+/bin
+/web/static/fontawesome

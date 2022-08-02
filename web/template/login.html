@@ -1,0 +1,27 @@
+{{define "login"}}
+    {{template "header" .}}    
+    <div class="container text-center mt-5">
+        <form action="/loginauth" method="POST" style="max-width:480px;margin:auto;">
+            <img class="mt-4 mb-4" src="/static/favicon.png" height="72">
+            <h1 class="h3 mb-3">Autenticação</h1>
+            <div class="mb-3">
+                <label for="user" class="sr-only">Usuario:</label>
+                <input type="text" id="user" class="form-control" placeholder="Usuário" name="user">
+            </div>
+            <div class="mb-3">
+            <label for="pass" class="sr-only">Senha:</label>
+            <input type="password" id="pass" class="form-control" placeholder="Senha" name="pass">
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Autenticar</button>        
+            </div>        
+        </form>
+    </div>    
+    
+    {{if .Result}}
+    <div class="text-center mt-5">{{.Result}}</div>    
+    {{end}}    
+    
+    
+    {{template "footer" .}}
+{{end}}

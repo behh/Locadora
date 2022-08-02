@@ -1,0 +1,47 @@
+{{define "carros"}}
+    {{template "header" .}}
+    {{template "navbar" .}}
+    <div class="container mb-3">
+
+        <form action="/carros" method="GET" class="d-inline-flex mt-3 mb-3">
+            <input class="form-control me-2" type="text" name="placa" id="placa" placeholder="Placa" aria-label="Placa">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      
+        {{ with .Carros }}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Cor</th>
+                        <th scope="col">Renavan</th>
+                        <th scope="col">Hodometro</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                {{ range . }}
+                    <tr>
+                        <td>{{.ID}}</td>
+                        <td>{{.Placa}}</td>
+                        <td>{{.Modelo}}</td>
+                        <td>{{.Cor}}</td>
+                        <td>{{.Renavan}}</td>
+                        <td>{{.Hodometro}}</td>
+                    </tr>
+                {{end}}
+
+                </tbody>
+            </table>
+        {{else}}
+            <div class="alert alert-primary" role="alert">
+                Não existem configurações cadastradas
+            </div>
+        {{end}}
+        
+    </div>
+    
+    {{template "footer" .}}
+{{end}}

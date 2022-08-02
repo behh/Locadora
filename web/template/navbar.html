@@ -1,0 +1,19 @@
+{{define "navbar"}}
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark bg-gradient text-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><a class="navbar-brand" href="#">
+            <img src="/static/favicon.png" alt="" width="30" height="30">
+        </a>        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/carros">Carros</a>
+                </li>                
+            </ul>
+            <a class="nav-link me-3" href="/logout">
+                <i class="fas fa-arrow-right-from-bracket"></i>
+            </a>
+        </div>
+    </div> 
+</nav>
+{{end}}
